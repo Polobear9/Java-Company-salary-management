@@ -4,8 +4,9 @@ package ManageMent;
 public class Index {
 
 	public static void main(String[] args) {
-		Member member1 = new Member("Nexon", "Lee", "Hyonseong", 5, 27);
-		Companylaborcontract comlabor1 = new Companylaborcontract("full-time", 8);
+		// Set the Member , Company Name , Member name , Member rank , Age
+		Member member1 = new Member("Nexon", "Lee", "polobear", 2, 27);
+		Companylaborcontract comlabor1 = new Companylaborcontract("Full-Time");
 		
 		System.out.print(member1.MemberFirstName + " " + member1.MemberLastName);
 		

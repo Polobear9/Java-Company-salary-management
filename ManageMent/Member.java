@@ -18,7 +18,7 @@ public class Member {
 		this.Age = Age;
 		
 		switch(CompanyRank) {
-		
+		//Set Base Salary each rank.
 		case 1:
 			this.salary = 350000;
 			return;
