@@ -11,10 +11,12 @@ public class Companylaborcontract {
 	
 	
 	public Companylaborcontract(String Companylabor) {
-		//Set a work time & Rest time.
 		
+		//Set a work time & Rest time.
 		this.Companylabor = Companylabor;
 		
+		
+		//set a rest time auto. Full time ? Part time?
 		if(Companylabor == "Part-Time") {
 			System.out.println("Input the Work time : ");
 			int inputWorkTime = sc.nextInt();
@@ -23,8 +25,6 @@ public class Companylaborcontract {
 		if(Companylabor == "Full-Time") {
 			this.LaborworkTime = 8;
 		}
-		
-		
 		
 		
 		if(LaborworkTime >= 8) {
