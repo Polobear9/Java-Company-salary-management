@@ -5,7 +5,7 @@ public class Index {
 
     public static void main(String[] args) {
         // Set the Member , Company Name , Member name , Member rank , Age
-        Member member1 = new Member("Nexon", "Lee", "polobear", 2, 27);
+        Member member1 = new Member();
         Companylaborcontract comlabor1 = new Companylaborcontract();
 
         System.out.println(member1.getMemberFirstName() + " " + member1.getMemberLastName());

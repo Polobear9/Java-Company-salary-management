@@ -1,6 +1,9 @@
 package ManageMent;
+import java.util.Scanner;
 
 public class Member {
+
+
 
     private String ComName;
     private String MemberFirstName;
@@ -9,13 +12,23 @@ public class Member {
     private int Age;
     private int salary;
 
-    public Member(String ComName, String MemberFirstName, String MemberLastName, int CompanyRanks, int Age) {
-        this.setComName(ComName);
-        this.setMemberFirstName(MemberFirstName);
-        this.setMemberLastName(MemberLastName);
-        this.setCompanyRank(CompanyRanks);
-        this.setAge(Age);
+    Scanner sc = new Scanner(System.in);
 
+    /**
+     * this constructor is use a make user data.
+     * when user add the data in the database.
+     * and this class work lookalike database.
+     */
+    public Member() {
+        this.setComName(sc.nextLine());
+        this.setMemberFirstName(sc.nextLine());
+        this.setMemberLastName(sc.nextLine());
+        this.setAge(sc.nextInt());
+
+        /**
+         * this salary is almost people who work in the Japan avg
+         * it can be changed and anytime we can change the value of this
+         */
         switch (CompanyRank) {
             //Set Base Salary each rank.
             case 1:
@@ -33,6 +46,8 @@ public class Member {
         }
     }
 
+
+    // ----->>>>> setter and getter <<<<<-----
     public String getComName() {
         return ComName;
     }
@@ -80,4 +95,6 @@ public class Member {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
+    // ----->>>>> setter and getter <<<<<-----
 }

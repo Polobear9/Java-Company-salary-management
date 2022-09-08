@@ -11,13 +11,17 @@ public class Companylaborcontract {
 
     public Companylaborcontract() {
 
-
         System.out.println("Enter the company LaborworkTime: ");
         System.out.println("1 : Part-Time , 2 : Full-Time");
         int Companylabor_Choose = sc.nextInt();
 
-        //Set a work time & Rest time.
 
+        /**
+         * before this switch sentence throw the null pointer exception
+         * need to check this code before we use this System,
+         * first now fix the null pointer exception.
+         * point --> Companylabor_Choose (Scanne)= 6 .. 7..--> null pointer exception
+         */
         switch (Companylabor_Choose) {
             case 1:
                 this.setCompanylabor("Part-Time");
@@ -47,6 +51,8 @@ public class Companylaborcontract {
         }
     }
 
+    // ----->>>>> setter and getter <<<<<-----
+
     public String getCompanylabor() {
         return Companylabor;
     }
@@ -70,4 +76,6 @@ public class Companylaborcontract {
     public void setRestTime(double restTime) {
         RestTime = restTime;
     }
+
+    // ----->>>>> setter and getter <<<<<-----
 }
