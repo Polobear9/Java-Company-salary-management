@@ -10,26 +10,25 @@ public class Member {
     private int salary;
 
     public Member(String ComName, String MemberFirstName, String MemberLastName, int CompanyRanks, int Age) {
-
-        this.ComName = ComName;
-        this.MemberFirstName = MemberFirstName;
-        this.MemberLastName = MemberLastName;
-        this.CompanyRank = CompanyRanks;
-        this.Age = Age;
+        this.setComName(ComName);
+        this.setMemberFirstName(MemberFirstName);
+        this.setMemberLastName(MemberLastName);
+        this.setCompanyRank(CompanyRanks);
+        this.setAge(Age);
 
         switch (CompanyRank) {
             //Set Base Salary each rank.
             case 1:
-                this.salary = 350000;
+                this.setSalary(350000);
                 break;
             case 2:
-                this.salary = 250000;
+                this.setSalary(250000);
                 break;
             case 3:
-                this.salary = 200000;
+                this.setSalary(200000);
                 break;
             default:
-                this.salary = 180000;
+                this.setSalary(180000);
                 break;
         }
     }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Companylaborcontract {
     private String Companylabor;
     private int LaborworkTime;
-    private int RestTime;
+    private double RestTime;
     Scanner sc = new Scanner(System.in);
 
     public Companylaborcontract(String Companylabor) {
@@ -15,12 +15,11 @@ public class Companylaborcontract {
         this.Companylabor = Companylabor;
 
         //set a rest time auto. Full time ? Part-time?
-        if (Companylabor == "Part-Time") {
+        if (Companylabor.equals("Part-Time")) {
             System.out.println("Input the Work time : ");
-            int inputWorkTime = sc.nextInt();
-            this.LaborworkTime = inputWorkTime;
+            this.LaborworkTime = sc.nextInt();
         }
-        if (Companylabor == "Full-Time") {
+        if (Companylabor.equals("Full-Time")) {
             this.LaborworkTime = 8;
         }
 
@@ -29,8 +28,7 @@ public class Companylaborcontract {
         }
 
         if (LaborworkTime < 6) {
-            double SetRestTime = 0.45;
-            this.RestTime = (int) SetRestTime;
+            this.RestTime = this.getRestTime() * 0.45;
         }
     }
 
@@ -50,11 +48,11 @@ public class Companylaborcontract {
         LaborworkTime = laborworkTime;
     }
 
-    public int getRestTime() {
+    public double getRestTime() {
         return RestTime;
     }
 
-    public void setRestTime(int restTime) {
+    public void setRestTime(double restTime) {
         RestTime = restTime;
     }
 }
