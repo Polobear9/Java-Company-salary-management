@@ -10,6 +10,7 @@ public class Index {
 
         System.out.println(member1.getMemberFirstName() + " " + member1.getMemberLastName());
         System.out.println(comlabor1.getRestTime() + " " + comlabor1.getLaborworkTime());
+        System.out.println("Age : " + member1.getAge() + " " + "Company Rank : " + member1.getComName() + " " + member1.getCompanyRank());
 
         int baseincome = (member1.getSalary() / 22 / comlabor1.getLaborworkTime());
 
