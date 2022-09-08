@@ -18,31 +18,32 @@ public class Companylaborcontract {
 
         //Set a work time & Rest time.
 
-        switch(Companylabor_Choose){
+        switch (Companylabor_Choose) {
             case 1:
                 this.setCompanylabor("Part-Time");
                 break;
             case 2:
                 this.setCompanylabor("Full-Time");
                 break;
+            default:
+                System.out.println("Try Again");
+                System.exit(0);
         }
-        this.Companylabor = Companylabor;
-
         //set a rest time auto. Full time ? Part-time?
-        if (Companylabor.equals("Part-Time")) {
+        if (this.getCompanylabor().equals("Part-Time")) {
             System.out.println("Input the Work time : ");
-            this.LaborworkTime = sc.nextInt();
+            this.setLaborworkTime(sc.nextInt());
         }
-        if (Companylabor.equals("Full-Time")) {
-            this.LaborworkTime = 8;
-        }
-
-        if (LaborworkTime >= 8) {
-            this.RestTime = 1;
+        if (this.getCompanylabor().equals("Full-Time")) {
+            this.setLaborworkTime(8);
         }
 
-        if (LaborworkTime < 6) {
-            this.RestTime = this.getRestTime() * 0.45;
+        if (this.getLaborworkTime() > 8) {
+            this.setRestTime(1);
+        }
+
+        if (this.getLaborworkTime() <= 7) {
+            this.setRestTime(0.45);
         }
     }
 
