@@ -9,9 +9,23 @@ public class Companylaborcontract {
     private double RestTime;
     Scanner sc = new Scanner(System.in);
 
-    public Companylaborcontract(String Companylabor) {
+    public Companylaborcontract() {
+
+
+        System.out.println("Enter the company LaborworkTime: ");
+        System.out.println("1 : Part-Time , 2 : Full-Time");
+        int Companylabor_Choose = sc.nextInt();
 
         //Set a work time & Rest time.
+
+        switch(Companylabor_Choose){
+            case 1:
+                this.setCompanylabor("Part-Time");
+                break;
+            case 2:
+                this.setCompanylabor("Full-Time");
+                break;
+        }
         this.Companylabor = Companylabor;
 
         //set a rest time auto. Full time ? Part-time?
