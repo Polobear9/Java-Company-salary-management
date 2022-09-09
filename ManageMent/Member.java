@@ -1,9 +1,9 @@
 package ManageMent;
+
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Member {
-
-
 
     private String ComName;
     private String MemberFirstName;
@@ -11,8 +11,13 @@ public class Member {
     private int CompanyRank;
     private int Age;
     private int salary;
+    private int company_Join_Year;
+    private int basic_Income;
+    private int working_Year;
+
 
     Scanner sc = new Scanner(System.in);
+    LocalDateTime date = LocalDateTime.now();
 
     /**
      * this constructor is use a make user data.
@@ -20,29 +25,33 @@ public class Member {
      * and this class work lookalike database.
      */
     public Member() {
+        this.setBasic_Income(150000);
+        System.out.println("Company Name: ");
         this.setComName(sc.nextLine());
+        System.out.println("Your First Name: ");
         this.setMemberFirstName(sc.nextLine());
+        System.out.println("Your Last Name: ");
         this.setMemberLastName(sc.nextLine());
+        System.out.println("Your Age");
         this.setAge(sc.nextInt());
+        System.out.println("When[Year] you come this Company? ");
+        this.setCompany_Join_Year(sc.nextInt());
 
-        /**
-         * this salary is almost people who work in the Japan avg
-         * it can be changed and anytime we can change the value of this
-         */
-        switch (CompanyRank) {
+        this.setWorking_Year(date.getYear() - this.getCompany_Join_Year());
+
+        if (this.getWorking_Year() >= 10) {
             //Set Base Salary each rank.
-            case 1:
-                this.setSalary(350000);
-                break;
-            case 2:
-                this.setSalary(250000);
-                break;
-            case 3:
-                this.setSalary(200000);
-                break;
-            default:
-                this.setSalary(180000);
-                break;
+            this.setSalary(400000);
+            this.setCompanyRank(1);
+        } else if (this.getWorking_Year() >= 5) {
+            this.setSalary(350000);
+            this.setCompanyRank(2);
+        } else if (this.getWorking_Year() >= 3) {
+            this.setSalary(250000);
+            this.setCompanyRank(3);
+        } else {
+            this.setSalary(180000);
+            this.setCompanyRank(4);
         }
     }
 
@@ -94,6 +103,30 @@ public class Member {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public int getCompany_Join_Year() {
+        return company_Join_Year;
+    }
+
+    public void setCompany_Join_Year(int company_Join_Year) {
+        this.company_Join_Year = company_Join_Year;
+    }
+
+    public int getBasic_Income() {
+        return basic_Income;
+    }
+
+    public void setBasic_Income(int basic_Income) {
+        this.basic_Income = basic_Income;
+    }
+
+    public int getWorking_Year() {
+        return working_Year;
+    }
+
+    public void setWorking_Year(int working_Year) {
+        this.working_Year = working_Year;
     }
 
     // ----->>>>> setter and getter <<<<<-----

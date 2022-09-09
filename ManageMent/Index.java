@@ -1,9 +1,12 @@
 package ManageMent;
 
 
+import java.time.LocalDateTime;
+
 public class Index {
 
     public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
         // Set the Member , Company Name , Member name , Member rank , Age
         Member member1 = new Member();
         Companylaborcontract comlabor1 = new Companylaborcontract();
