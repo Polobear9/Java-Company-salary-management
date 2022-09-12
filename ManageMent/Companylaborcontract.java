@@ -16,11 +16,11 @@ public class Companylaborcontract {
         int Companylabor_Choose = sc.nextInt();
 
 
-        /**
-         * before this switch sentence throw the null pointer exception
-         * need to check this code before we use this System,
-         * first now fix the null pointer exception.
-         * point --> Companylabor_Choose (Scanne)= 6 .. 7..--> null pointer exception
+        /*
+          before this switch sentence throw the null pointer exception
+          need to check this code before we use this System,
+          first now fix the null pointer exception.
+          point --> Companylabor_Choose (Scanne)= 6 .. 7..--> null pointer exception
          */
         switch (Companylabor_Choose) {
             case 1:
