@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Member {
 
+    public Companylaborcontract companylaborcontract;
+
     private String ComName;
     private String MemberFirstName;
     private String MemberLastName;
@@ -24,7 +26,8 @@ public class Member {
      * when user add the data in the database.
      * and this class work lookalike database.
      */
-    public Member() {
+    public Member(Companylaborcontract companylaborcontract) {
+        this.companylaborcontract = companylaborcontract;
         this.setBasic_Income(150000);
         System.out.println("Company Name: ");
         this.setComName(sc.nextLine());
@@ -53,12 +56,11 @@ public class Member {
             this.setSalary(180000);
             this.setCompanyRank(4);
         }
-        Companylaborcontract companylaborcontract = new Companylaborcontract();
         System.out.println(this.getMemberFirstName() + " " + this.getMemberLastName());
         System.out.println(companylaborcontract.getRestTime() + " " + companylaborcontract.getLaborworkTime());
         System.out.println("Age : " + this.getAge() + " " + "Company Rank : " + this.getComName() + " " + this.getCompanyRank());
         int baseincome = (this.getSalary() / 22 / companylaborcontract.getLaborworkTime());
-        System.out.println("This Member is Fullsalary is " +this.getSalary() + " Japan Yen.");
+        System.out.println("This Member is Fullsalary is " + this.getSalary() + " Japan Yen.");
         System.out.println("This Member is Baseincome[for one Hours] is " + baseincome + " Japan Yen.");
         System.out.println("This Member work " + companylaborcontract.getLaborworkTime() * 22 + " Hours for Month.");
     }
