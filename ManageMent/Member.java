@@ -29,6 +29,20 @@ public class Member {
     public Member(Companylaborcontract companylaborcontract) {
         this.companylaborcontract = companylaborcontract;
         this.setBasic_Income(150000);
+
+        basicSet();
+
+        System.out.println(this.getMemberFirstName() + " " + this.getMemberLastName());
+        System.out.println(companylaborcontract.getRestTime() + " " + companylaborcontract.getLaborworkTime());
+        System.out.println("Age : " + this.getAge() + " " + "Company Rank : " + this.getComName() + " " + this.getCompanyRank());
+        int baseincome = (this.getSalary() / 22 / companylaborcontract.getLaborworkTime());
+        System.out.println("This Member is Fullsalary is " + this.getSalary() + " Japan Yen.");
+        System.out.println("This Member is Baseincome[for one Hours] is " + baseincome + " Japan Yen.");
+        System.out.println("This Member work " + companylaborcontract.getLaborworkTime() * 22 + " Hours for Month.");
+    }
+
+    private void basicSet() {
+
         System.out.println("Company Name: ");
         this.setComName(sc.nextLine());
         System.out.println("Your First Name: ");
@@ -43,16 +57,9 @@ public class Member {
         this.setWorking_Year(date.getYear() - this.getCompany_Join_Year());
         salarySet(this.getWorking_Year());
 
-        System.out.println(this.getMemberFirstName() + " " + this.getMemberLastName());
-        System.out.println(companylaborcontract.getRestTime() + " " + companylaborcontract.getLaborworkTime());
-        System.out.println("Age : " + this.getAge() + " " + "Company Rank : " + this.getComName() + " " + this.getCompanyRank());
-        int baseincome = (this.getSalary() / 22 / companylaborcontract.getLaborworkTime());
-        System.out.println("This Member is Fullsalary is " + this.getSalary() + " Japan Yen.");
-        System.out.println("This Member is Baseincome[for one Hours] is " + baseincome + " Japan Yen.");
-        System.out.println("This Member work " + companylaborcontract.getLaborworkTime() * 22 + " Hours for Month.");
     }
 
-    public void salarySet(int workingYearSet) {
+    private void salarySet(int workingYearSet) {
 
         if (workingYearSet >= 10) {
             //Set Base Salary each rank.
