@@ -41,21 +41,8 @@ public class Member {
         this.setCompany_Join_Year(sc.nextInt());
 
         this.setWorking_Year(date.getYear() - this.getCompany_Join_Year());
+        salarySet(this.getWorking_Year());
 
-        if (this.getWorking_Year() >= 10) {
-            //Set Base Salary each rank.
-            this.setSalary(400000);
-            this.setCompanyRank(1);
-        } else if (this.getWorking_Year() >= 5) {
-            this.setSalary(350000);
-            this.setCompanyRank(2);
-        } else if (this.getWorking_Year() >= 3) {
-            this.setSalary(250000);
-            this.setCompanyRank(3);
-        } else {
-            this.setSalary(180000);
-            this.setCompanyRank(4);
-        }
         System.out.println(this.getMemberFirstName() + " " + this.getMemberLastName());
         System.out.println(companylaborcontract.getRestTime() + " " + companylaborcontract.getLaborworkTime());
         System.out.println("Age : " + this.getAge() + " " + "Company Rank : " + this.getComName() + " " + this.getCompanyRank());
@@ -63,6 +50,24 @@ public class Member {
         System.out.println("This Member is Fullsalary is " + this.getSalary() + " Japan Yen.");
         System.out.println("This Member is Baseincome[for one Hours] is " + baseincome + " Japan Yen.");
         System.out.println("This Member work " + companylaborcontract.getLaborworkTime() * 22 + " Hours for Month.");
+    }
+
+    public void salarySet(int workingYearSet) {
+
+        if (workingYearSet >= 10) {
+            //Set Base Salary each rank.
+            this.setSalary(400000);
+            this.setCompanyRank(1);
+        } else if (workingYearSet >= 5) {
+            this.setSalary(350000);
+            this.setCompanyRank(2);
+        } else if (workingYearSet >= 3) {
+            this.setSalary(250000);
+            this.setCompanyRank(3);
+        } else {
+            this.setSalary(180000);
+            this.setCompanyRank(4);
+        }
     }
 
 
